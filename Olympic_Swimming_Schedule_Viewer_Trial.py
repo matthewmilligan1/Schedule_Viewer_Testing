@@ -3,11 +3,13 @@
 import os
 import streamlit as st
 import pandas as pd
-
+import matplotlib.pyplot as plt
+import plotly as px
+import pyautogui
 
 password = "Olympic2024!"
 
-validation = pd.read_excel('Validation.xlsx')
+validation = pd.read_excel('https://github.com/matthewmilligan1/Schedule_Viewer_Testing/blob/main/Validation.xlsx')
 
 Swimmer_List = validation['Swimmer'].unique()
 
@@ -119,7 +121,7 @@ def Swimmer_View():
 
     #Dataset manipulation
 
-    swimmer_dataset = pd.read_excel('RAW Timetable.xlsx')
+    swimmer_dataset = pd.read_excel('https://github.com/matthewmilligan1/Schedule_Viewer_Testing/blob/main/RAW%20Timetable.xlsx')
 
     Swimmer_List = validation['Swimmer'].unique()
 
@@ -399,7 +401,7 @@ def Coach_View():
 
     #Dataset manipulation
 
-    coach_dataset = pd.read_excel('RAW Timetable.xlsx')
+    coach_dataset = pd.read_excel('https://github.com/matthewmilligan1/Schedule_Viewer_Testing/blob/main/RAW%20Timetable.xlsx')
 
     Coach_List = validation['Swimmer'].unique()
 
@@ -441,10 +443,10 @@ def Coach_View():
     coach_metres_covered = coach_dataset_filter['Distance'].sum()
 
 
-    coach_dataset_2 = pd.read_excel('RAW Timetable.xlsx')
+    coach_dataset_2 = pd.read_excel('https://github.com/matthewmilligan1/Schedule_Viewer_Testing/blob/main/RAW%20Timetable.xlsx')
     coach_dataset_2['Event Start'] = coach_dataset_2['Event Start'].apply(str).str[0:5]
 
-    validation_2 = pd.read_excel('Validation.xlsx')
+    validation_2 = pd.read_excel('https://github.com/matthewmilligan1/Schedule_Viewer_Testing/blob/main/Validation.xlsx')
 
     validation_2 = pd.merge(validation_2, coach_dataset_2, on='Event', how='left')
 
@@ -629,7 +631,7 @@ def Hypothetical_View():
 
     Event_Selection = pd.DataFrame({'Event Select': Event_Select})
 
-    event_dataset = pd.read_excel('RAW Timetable.xlsx')
+    event_dataset = pd.read_excel('https://github.com/matthewmilligan1/Schedule_Viewer_Testing/blob/main/RAW%20Timetable.xlsx')
 
     event_dataset = pd.merge(event_dataset, Event_Selection, left_on='Event', right_on='Event Select', how='left')
 
