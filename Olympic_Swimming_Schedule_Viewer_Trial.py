@@ -7,7 +7,7 @@ import pandas as pd
 
 password = "Olympic2024!"
 
-validation = pd.read_excel('https://github.com/matthewmilligan1/Schedule_Viewer_Testing/blob/0eb4e2a2ee876ad1adb7c20c6d808d27d0e4bcbc/Validation.xlsx')
+validation = pd.read_excel('Validation.xlsx')
 
 Swimmer_List = validation['Swimmer'].unique()
 
