@@ -93,8 +93,7 @@ elif Viewer_Method == 'Hypothetical View':
 st.sidebar.markdown("""---""")
 
 st.sidebar.subheader('Export Information')
-if st.sidebar.button('Export or print page as pdf'):
-    pyautogui.hotkey('ctrl', 'p')
+st.sidebar.write('To export report page, close sidebar and head to the top right corner of the page (≣)')
 
 
 
