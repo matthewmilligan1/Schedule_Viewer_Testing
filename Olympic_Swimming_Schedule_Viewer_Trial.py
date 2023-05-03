@@ -140,8 +140,6 @@ def Swimmer_View():
     swimmer_dataset_filter = pd.DataFrame(swimmer_dataset.loc[(swimmer_dataset['Swimmer'] == Swimmer_Select)])
 
     session_1 = pd.DataFrame(swimmer_dataset.loc[(swimmer_dataset['Session ID'] == 1) & (swimmer_dataset['Swimmer'] == Swimmer_Select)])
-    styler = session_1[['Event:', 'Time:']].style.hide_index()
-
     session_2 = pd.DataFrame(swimmer_dataset.loc[(swimmer_dataset['Session ID'] == 2) & (swimmer_dataset['Swimmer'] == Swimmer_Select)])
     session_3 = pd.DataFrame(swimmer_dataset.loc[(swimmer_dataset['Session ID'] == 3) & (swimmer_dataset['Swimmer'] == Swimmer_Select)])
     session_4 = pd.DataFrame(swimmer_dataset.loc[(swimmer_dataset['Session ID'] == 4) & (swimmer_dataset['Swimmer'] == Swimmer_Select)])
